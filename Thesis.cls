@@ -195,7 +195,7 @@
       {\LARGE \authornames \par}
       \vfill
       {\large This thesis has been submitted in partial fulfillment for the \par}
-      {\large degree of Bachelor of Science in YOUR DEGREE \par}
+      {\large degree of Bachelor of Science in Software Development \par}
       \bigskip
       \bigskip
       {\large in the \par}
