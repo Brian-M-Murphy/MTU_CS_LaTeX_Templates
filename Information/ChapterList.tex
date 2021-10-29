@@ -1,0 +1,15 @@
+\newcounter{semester}
+\setcounter{semester}{1} % change to 2 to switch to implementation phase template
+
+
+\input{Chapters/Chapter1} % Introduction
+\input{Chapters/Chapter2} % Background
+\input{Chapters/Chapter3} % Problem Analysis and Design
+\input{Chapters/Chapter4} % Implementation Approach
+\ifnum \value{semester}=1
+\input{Chapters/Chapter5_Rsh} % Semester 1 conclusion
+\else
+\input{Chapters/Chapter5} % Actual Implementation
+\input{Chapters/Chapter6} % Testing
+\input{Chapters/Chapter7} % Discussion and Conclusion
+\fi
