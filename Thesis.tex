@@ -4,11 +4,7 @@
 
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
-\newcommand{\setimp}{\newif \ifimp \imptrue}
-\newcommand{\unsetimp}{\newif \ifimp \impfalse}
 
-% change the below line to \setimp to switch to implementation phase template
-\unsetimp
 
 % Include any extra LaTeX packages required
 \usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
@@ -25,8 +21,8 @@
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Your Thesis Title}
-\authors  {Your Name}
+\title  {\thesistitle}
+\authors{\studentname}
             
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
 \date       {\today}
@@ -51,12 +47,14 @@
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-I, Myname , declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
+
+      
+This report, \thesistitle, is submitted in partial fulfillment of the requirements of \awardlevel \space in \award \space at \institutename. I, \studentname , declare that this thesis titled, \thesistitle  and the work represents substantially the result of my own work except where explicitly indicated in the text. This report may be freely copied and distributed provided the source is explicitly acknowledged. I confirm that:
 
 \begin{itemize} 
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for an undergraduate degree at Munster Technological University.
+\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature \awardlevel \space in \award \space at \institutename.
  
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at Munster Technological University or any other institution, this has been clearly stated.
+\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at \institutename \space or any other institution, this has been clearly stated.
  
 \item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
  
@@ -77,15 +75,13 @@ Date:\\
 }
 \clearpage  % Declaration ended, now start a new page
 
-%% ----------------------------------------------------------------
+%%% ----------------------------------------------------------------
 
 % The Abstract Page
 \addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The Thesis Abstract is written here (and kept just one page long or less). The page is kept centered vertically so can expand into the blank space above the title too\ldots Briefly, write in 3-4 paragraphs on what your project is about. This is a more precise version of your project abstract submitted on week 1 updated with developments between then and the submission time. Try to include the main features and functional requirements provided. As the title suggests this section is normally the only thing an executive would read so it MUST get across the main elements of the project.
-
+\input{Information/Abstract.tex}
 }
 
 \clearpage  % Abstract ended, start a new page
@@ -96,9 +92,7 @@ The Thesis Abstract is written here (and kept just one page long or less). The p
 % The Acknowledgements page, for thanking everyone
 \acknowledgements{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The acknowledgements and the people to thank go here, don't forget to include your project supervisor (term one and two)\ldots
-
+\input{Information/Acknowledgement.tex}
 }
 \clearpage  % End of the Acknowledgements
 %% ----------------------------------------------------------------
@@ -144,22 +138,14 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
-\input{Chapters/Chapter1} % Introduction
-\input{Chapters/Chapter2} % Background Theory 
-\input{Chapters/Chapter3} % Problem
-\input{Chapters/Chapter4} % Solution Approach
+%% ----------------------------------------------------------------
+%% CHAPTERS
+\input{Information/ChapterList.tex}
 
-\ifimp
-\input{Chapters/Chapter5} % Conclusions and Term 2 work
-\input{Chapters/Chapter6} % Conclusions and Term 2 work
-\input{Chapters/Chapter7} % Conclusions and Term 2 work
-\else
-\input{Chapters/Chapter5_Rsh} % Conclusions and Term 2 work
-\fi
 %% ----------------------------------------------------------------
 \label{Bibliography}
 \bibliographystyle{IEEEtranN}  % Use the "IEEE Transaction" BibTeX style for formatting the Bibliography
-\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\bibliography{Information/Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
 \lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
 
 %% ----------------------------------------------------------------
@@ -169,11 +155,7 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
-\input{Appendices/AppendixA}	% Appendix Title
-
-\input{Appendices/AppendixB} % Appendix Title
-
-%\input{Appendices/AppendixC} % Appendix Title
+\input{Information/AppendixList.tex}
 
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 \backmatter

@@ -4,6 +4,8 @@
 %%
 %% Created by Steve R. Gunn, modified by Sunil Patel: www.sunilpatel.co.uk
 
+\input{Information/PersonalDetails.tex}
+
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{Thesis}
               [2007/22/02 v1.0
@@ -149,24 +151,24 @@
 \examiner    {}
 \degree      {}
 \authors     {}
-\university  {\texorpdfstring{\href{http://www.mtu.ie}
-                {Munster Technological University}}
-                {Munster Technological University}}
-\UNIVERSITY  {\texorpdfstring{\href{http://www.mtu.ie}
-                {Munster Technological University}}
-                {Munster Technological University}}
-\department  {\texorpdfstring{\href{http://www.computing.cit.ie}
-                {Department of Computer Science}}
-                {Department of Computer Science}}
-\DEPARTMENT  {\texorpdfstring{\href{http://www.computing.cit.ie}
-                {DEPARTMENT OF COMPUTER SCIENCE}}
-                {DEPARTMENT OF COMPUTER SCIENCE}}
-\faculty     {\texorpdfstring{\href{http://www.mtu.ie)}
-                {Faculty of Engineering and Science}}
-                {Faculty of Engineering and Science}}
-\FACULTY     {\texorpdfstring{\href{http://www.mtu.ie}
-                {FACULTY OF ENGINEERING AND SCIENCE}}
-                {FACULTY OF ENGINEERING AND SCIENCE}}
+\university  {\texorpdfstring{\href{\instituteweb{}}
+                {\institutename{}}}
+                {\institutename{}}}
+\UNIVERSITY  {\texorpdfstring{\href{\instituteweb{}}
+                {\MakeUppercase{\institutename{}}}}
+                {\MakeUppercase{\institutename{}}}}
+\department  {\texorpdfstring{\href{\departmentweb{}}
+                {\departmentname{}}}
+                {\departmentname{}}}
+\DEPARTMENT  {\texorpdfstring{\href{\departmentweb{}}
+                {\MakeUppercase{\departmentname{}}}}
+                {\MakeUppercase{\departmentname{}}}}
+\faculty     {\texorpdfstring{\href{\facultyweb{})}
+                {\facultyname{}}}
+                {\facultyname{}}}
+\FACULTY     {\texorpdfstring{\href{\facultyweb{}}
+                {\MakeUppercase{\facultyname{}}}}
+                {\MakeUppercase{\facultyname{}}}}
 \addresses   {}
 \subject     {}
 \keywords    {}
@@ -195,7 +197,7 @@
       {\LARGE \authornames \par}
       \vfill
       {\large This thesis has been submitted in partial fulfillment for the \par}
-      {\large degree of Bachelor of Science in Computer Systems \par}
+      {\large degree of \awardlevel \space in \award \par}
       \bigskip
       \bigskip
       {\large in the \par}
@@ -238,7 +240,7 @@
     {\normalsize \facname \par}
     {\normalsize \deptname \par}
     \bigskip
-    {\normalsize Bachelor of Science \par}
+    {\normalsize \awardlevel \par}
     \bigskip
     {\normalsize\bf \@title \par}
     \medskip
