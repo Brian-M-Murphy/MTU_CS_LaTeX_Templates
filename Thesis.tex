@@ -5,25 +5,25 @@
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 
-\graphicspath{Figures/}
-
 % Include any extra LaTeX packages required
 \usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
-
 \usepackage[nottoc]{tocbibind} % bind bibliography to the table of contents
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
 \usepackage[table]{xcolor}
-
 \hypersetup{urlcolor=black, colorlinks=true}  % Colours hyperlinks in black, can be distracting if there are many links and colored blue.
+\usepackage{graphicx}
+\graphicspath{{Figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
 
 %% ----------------------------------------------------------------
 \begin{document}
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
+
+
 % Set up the Title Page
-\title  {THESIS TITLE}
-\authors  {My name}
+\title  {\thesistitle}
+\authors{\studentname}
             
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
 \date       {\today}
@@ -43,17 +43,19 @@
 \pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
 %% ----------------------------------------------------------------
-% Declaration Page required for the Thesis, your institution may give you a different text to place here
+% Declaration Page required for the Thesis
 \Declaration{
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-I, My name, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
+
+      
+This report, \thesistitle, is submitted in partial fulfillment of the requirements of \awardlevel \space in \award \space at \institutename. I, \studentname , declare that this thesis titled, \thesistitle and the work represents substantially the result of my own work except where explicitly indicated in the text. This report may be freely copied and distributed provided the source is explicitly acknowledged. I confirm that:
 
 \begin{itemize} 
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for an masters degree at Cork Institute of Technology.
+\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature \awardlevel \space in \award \space at \institutename.
  
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at Cork Institiute of Technology or any other institution, this has been clearly stated.
+\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at \institutename \space or any other institution, this has been clearly stated.
  
 \item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
  
@@ -62,8 +64,6 @@ I, My name, declare that this thesis titled, `THESIS TITLE' and the work present
 \item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
  
 \item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-
-\item[\tiny{$\blacksquare$}] I understand that my project documentation may be stored in the library at CIT, and may be referenced by others in the future.
 \\
 \end{itemize}
  
@@ -82,9 +82,7 @@ Date:\\
 \addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
-
+\input{Information/Abstract.tex}
 }
 
 \clearpage  % Abstract ended, start a new page
@@ -95,9 +93,7 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % The Acknowledgements page, for thanking everyone
 \acknowledgements{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The acknowledgements and the people to thank go here, don't forget to include your project adviser\ldots
-
+\input{Information/Acknowledgement.tex}
 }
 \clearpage  % End of the Acknowledgements
 %% ----------------------------------------------------------------
@@ -143,23 +139,15 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
-\input{Chapters/Chapter1} % Introduction
-
-\input{Chapters/Chapter2} % Background Theory 
-
-\input{Chapters/Chapter3} % Problem
-
-\input{Chapters/Chapter4} % Solution Approach
-
-\input{Chapters/Chapter5} % Conclusions and Term 2 work
+%% ----------------------------------------------------------------
+%% CHAPTERS
+\input{Information/ChapterList.tex}
 
 %% ----------------------------------------------------------------
 \label{Bibliography}
 \bibliographystyle{IEEEtranN}  % Use the "IEEE Transaction" BibTeX style for formatting the Bibliography
-
-\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+\bibliography{Information/Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
 \lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
-\setcitestyle{authoryear,open={((},close={))}}
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
@@ -168,11 +156,7 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
-\input{Appendices/AppendixA}	% Appendix Title
-
-\input{Appendices/AppendixB} % Appendix Title
-
-%\input{Appendices/AppendixC} % Appendix Title
+\input{Information/AppendixList.tex}
 
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 \backmatter

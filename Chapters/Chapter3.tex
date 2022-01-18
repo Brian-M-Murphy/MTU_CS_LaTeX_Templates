@@ -1,40 +1,41 @@
-\chapter{Problem - rename to project title}
-\lhead{\emph{Problem Statement}}
-This chapter should comprise 4-6 pages and describe the problem you are trying to solve.
+\chapter{Design}
+\label{chap:design}
+\lhead{\emph{Design}}
+The key question to be addressed in this chapter is: ``How do I plan to achieve what I have outlined in the previous chapter". 
+
+This chapter should include requirements capture, data flow, entity relation, object diagrams, etc.; overall system structure, comparison and justification of choices for algorithms and data structures. Critical evaluation is to be done in a later chapter. Again, all sections below are suggestions and will vary significantly from project to project, the key element to be addressed is the core question of the chapter.
 
 \section{Problem Definition}
-Describe the problem you are trying to solve in this project. There may be a need a some point during the report to display an equation. The formatting of these is reliably done in Latex also as we can see in equation \ref{eq:Legrange}.
+Describe the problem you are trying to solve in this project in technical detail, here you need to be expicit as details will impact the design. Sometimes here there will be a need at some point during the report to display an equation that may be core to your project. For example if the project is on gait detection what equation are you using to determine gait? If the project is on localization what is the method/formula? The formatting of these is reliably done in Latex also as we can see in equation \ref{eq:Legrange}.
 
 \begin{equation}
 \frac{d}{dt}(\frac{\partial L}{\partial \dot{c_i}})-\frac{\partial L}{\partial c_i}+\frac{\partial P}{\partial \dot{c_i}} = F_i,
 \label{eq:Legrange}
 \end{equation}
 
-
 \section{Objectives}
-Enumerate the objectives you want to achieve in your project.
+Enumerate the objectives you want to achieve in your project. Again as this is an early stage these will tend to change but there should be a rational explanation for this change. Always document your work, keep a lab book during the term that you only use for FYP!
 
-\section{Functional Requirements}
+\section{Requirements}
 Enumerate the functional requirements you want your project to have. 
 
-Please, do not include here the use cases. If you want to create a one-to-one mapping between functional requirements and use cases (which does not necessarily need to be the case, indeed most likely this will not be the case) then here purely describe what do you want this functional requirement / use case to do. In no case should you use this section to provide a description of how to implement them.  \citep{belqasmi2011restful}
-\citet{Reference1}
-\citet*{duan2012survey}
-\citeauthor{duan2012survey}
+Please, do not include use cases here! If you want to create a one-to-one mapping between functional requirements and use cases (which does not necessarily need to be the case, indeed most likely this will not be the case) do it elsewhere. Here should purely describe \textbf{what do you want to do}. In no case should you use this section to provide a description of how to implement them, that is for later. For people doing projects that are not heavy implementation projects (e.g. deploying an architecture or testing a novel tool in specific conditions) this structure can still be used as it will force you to think about what you plan to achieve and what possible metrics you may need to measure success.
 
-Let me explain this with more detail. A common mistake is that people confuse the problem description with the solution approach. This is a common mistake by confusing the what with the how. Here we are purely focused on the what: What is this project about? What are the objectives? What are the functional and non-functional requirements? 
+Let me explain this with more detail: A common mistake is that people confuse the problem description with the solution approach. This is a common mistake by confusing the \emph{what} with the \emph{how}. Here we are purely focused on the what: What is this project about? What are the objectives? What are the functional and non-functional requirements? 
 
-How are we going to do all these things? Well, this is a question for next chapter. Provided a problem, an objective or a functional requirement, obviously there might be many ways of doing it, there might be many hows, but the definition what we want to achieve (the definition of the what) should be unique.
-
-\section{Non-Functional Requirements}
-Enumerate the non-functional requirements you want to achieve in your project (i.e. broadly speaking how your system will operate)
-
-One other display structure you may wish to use at some stage during the report is a figure array. This can also be easily done with Latex and is shown in figure \ref{fig:twosuccesskid}
+How are we going to do all these things? Well, this is a question for next section. Provided a problem, an objective or a functional requirement, obviously there will usually be many ways of doing it, thus there will be many \emph{hows}, but the definition, the \emph{what} we want to achieve will be unique. LAteX hint: One other display structure you may wish to use at some stage during the report is a figure array. This can also be easily done with Latex and is shown in figure \ref{fig:twosuccesskid}
 
 \begin{figure}
 \centering     %%% not \center
-\subfigure[Figure A]{\label{fig:a}\includegraphics[width=0.48\textwidth]{Figures/successkid.jpg}}
-\subfigure[Figure B]{\label{fig:b}\includegraphics[width=0.48\textwidth]{Figures/successkid.jpg}}
+\subfigure[Figure A]{\label{fig:a}\includegraphics[width=0.48\textwidth]{successkid.jpg}}
+\subfigure[Figure B]{\label{fig:b}\includegraphics[width=0.48\textwidth]{successkid.jpg}}
 \caption{Two Success kids}
 \label{fig:twosuccesskid}
 \end{figure}
+
+Make sure to also enumerate the non-functional requirements you want to achieve in your project (i.e. broadly speaking how your system will operate).
+
+\section{Design} \label{sec:Arch}
+Describe the architecture of the solution that you have in mind, including technologies involved (e.g., frameworks, programming language). 
+
+Provide a high level view of the system and then break down of the system. Include any packages or components you are using (the versions of these should be given) and what they are responsible for and what they communicate to. You need to be as specific here as you can. If you have hardware element in your project this is also where you provide a high level view of how these elements integrate into the project. So for a project that is cyber-physical you will have both a hardware and software architectural diagram.
