@@ -2,7 +2,7 @@
 MTU Computer Science LaTeX Templates
 ============================================
 
-![MTU](./Figures/MTUCREST.jpg){:height="50%" width="50%"}
+![MTU](./Figures/MTUCREST.jpg)
 
 ___
 
