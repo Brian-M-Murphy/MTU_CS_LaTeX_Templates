@@ -17,3 +17,4 @@ Each template is on an individual branch and can be accessed by the links below:
 * [MSc in Cybersecurity](https://github.com/Brian-M-Murphy/MTU_CS_LaTeX_Templates/tree/MScCybersecurity)
 * [MSc in Cybersecurity Management](https://github.com/Brian-M-Murphy/MTU_CS_LaTeX_Templates/tree/MScCybersecurityManagement)
 * [PGDip in Cybersecurity Management](https://github.com/Brian-M-Murphy/MTU_CS_LaTeX_Templates/tree/PGDipCSM)
+* [PhD](https://github.com/Brian-M-Murphy/MTU_CS_LaTeX_Templates/tree/PhD)
